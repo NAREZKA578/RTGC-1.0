@@ -3,7 +3,7 @@ name = "rtgc"
 version = "1.0.0-dev"
 edition = "2021"
 authors = ["NAREZKA578"]
-description = "RTGC-1.0: Russian Open World Vehicle Simulator - Core Engine"
+description = "RTGC-1.0"
 license = "Apache-2.0"
 
 [dependencies]
