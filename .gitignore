@@ -1,72 +1,36 @@
 ```
-# Rust/Cargo
+# Rust-specific ignores
 target/
 Cargo.lock
 
-# Dependencies
-node_modules/
-
-# Python (if any Python scripts are used in the project)
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-venv/
-env/
-ENV/
-.venv/
-
 # Build artifacts
-build/
-dist/
-*.o
-*.obj
-*.a
-*.lib
-*.dylib
-*.so
-*.dll
-*.exe
+**/*.rs.bk
+**/*.tmp
 
-# IDE and editor files
+# IDE/Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
-*.tmp
 
 # Logs
 *.log
+
+# Environment files
+.env
+.env.local
+*.env.*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
 
 # Coverage reports
 coverage/
 htmlcov/
 .coverage
 
-# Environment variables
-.env
-.env.local
-*.env.*
-
-# OS specific
-.DS_Store
-Thumbs.db
-
-# MyPy cache
-.mypy_cache/
-__pycache__/
-
-# Pytest cache
-.pytest_cache/
-
-# Gradle
-.gradle/
-build/
-
-# Temporary files
+# Debug/Misc
 *.tmp
 *~
-.DS_Store
-Thumbs.db
 ```

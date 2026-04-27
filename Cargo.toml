@@ -1,0 +1,37 @@
+[package]
+name = "rtgc"
+version = "1.0.0-dev"
+edition = "2021"
+authors = ["NAREZKA578"]
+description = "RTGC-1.0: Russian Open World Vehicle Simulator - Core Engine"
+license = "Apache-2.0"
+
+[dependencies]
+# Windowing & Input
+winit = "0.30"
+
+# OpenGL RHI
+glow = "0.14"
+glutin = "0.32"
+glutin-winit = "0.5"
+
+# Math
+nalgebra = "0.33"
+
+# Threading & Concurrency
+crossbeam-channel = "0.5"
+rayon = "1.10"
+
+# Logging & Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Utilities
+bytemuck = { version = "1.16", features = ["derive"] }
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
