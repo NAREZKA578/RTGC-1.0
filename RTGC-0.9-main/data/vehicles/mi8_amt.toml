@@ -1,0 +1,228 @@
+# Mi-8AMT Shaka - Многоцелевой вертолёт
+# Транспортный, десантный, грузовой варианты
+
+[mesh]
+file = "vehicles/mi8_amt.obj"
+scale = 1.0
+center_offset = [0.0, 2.5, 0.0]
+
+[collider]
+type = "compound"
+children = [
+    { type = "box", size = [18.0, 2.5, 4.0], offset = [0.0, 1.5, 0.0] }, # фюзеляж
+    { type = "cylinder", radius = 10.7, height = 0.5, offset = [0.0, 4.5, 0.0] }, # главный ротор
+    { type = "cylinder", radius = 3.9, height = 0.3, offset = [-8.5, 3.0, 0.0], rotation = [0, 90, 0] } # хвостовой ротор
+]
+
+[rigidbody]
+mass = 7200.0
+max_cargo_mass = 4000.0
+external_load_max = 3000.0
+linear_damping = 0.05
+angular_damping = 0.1
+ccd_enabled = true
+inertia_tensor = [15000.0, 25000.0, 12000.0]
+
+[rotor_system]
+main_rotor:
+    blade_count = 5
+    radius_m = 10.7
+    chord_m = 0.65
+    twist_deg = -12.0
+    rpm_min = 180
+    rpm_max = 225
+    rpm_optimal = 210
+    inertia = 850.0
+    collective_range_deg = [-5, 25]
+    cyclic_range_deg = [-12, 12]
+    blade_material = "composite_glass"
+    tip_speed_max_m_s = 220
+    
+tail_rotor:
+    blade_count = 3
+    radius_m = 3.9
+    chord_m = 0.35
+    rpm_ratio = 4.2
+    thrust_range_n = [-3000, 3000]
+    pedal_range_deg = [-30, 30]
+    
+swashplate:
+    type = "non_articulated"
+    response_time_ms = 80
+    max_rate_deg_s = 60
+
+[engine]
+type = "tvd10_vks"
+count = 2
+power_hp_each = 2000
+sfc_kg_hp_h = 0.285
+rpm_max = 22000
+gearbox_reduction = 105.0
+start_time_s = 45.0
+oil_temp_min_c = 20
+oil_temp_max_c = 100
+egt_max_c = 750
+
+[fuel_system]
+tank_capacity_l = 1690
+internal_tanks = 4
+external_tanks_supported = true
+external_tank_capacity_l = 500
+consumption_l_per_hour = [450, 650, 850] # idle, cruise, max
+fuel_pump_pressure_bar = 2.5
+crossfeed_enabled = true
+
+[aerodynamics]
+fuselage:
+    drag_coefficient = 0.035
+    side_area_m2 = 35.0
+    frontal_area_m2 = 8.5
+    lift_interference = 0.15
+    
+rotor_induced:
+    figure_of_merit = 0.78
+    inflow_model = "dynamic_wake"
+    ground_effect_altitude_m = 15.0
+    
+tail:
+    vertical_stabilizer_m2 = 3.2
+    horizontal_stabilizer_m2 = 4.5
+    weathervane_stability = 0.25
+
+[flight_controls]
+cyclic:
+    sensitivity = 1.0
+    force_feedback = true
+    trim_enabled = true
+    
+collective:
+    friction_adjustable = true
+    throttle_correlator = true
+    
+pedals:
+    spring_centered = true
+    authority_deg = 30
+    
+autopilot:
+    modes = ["altitude_hold", "heading_hold", "hover_hold", "approach"]
+    sas_enabled = true
+    stability_augmentation = true
+
+[landing_gear]
+type = "skid"
+track_width_m = 4.0
+length_m = 4.5
+ground_clearance_m = 1.8
+shock_absorption = "oleo_pneumatic"
+max_sink_rate_m_s = 3.5
+emergency_popout_floats = false
+
+[cargo_cabin]
+volume_m3 = 23.0
+floor_length_m = 5.3
+floor_width_m = 2.3
+floor_height_m = 1.8
+door_type = "sliding_clamshell"
+ramp_angle_deg = 35
+seating_capacity = 24
+stretcher_capacity = 12
+cargo_hook = true
+winch_capacity_kg = 150
+
+[avionics]
+navigation = ["gps", "vor", "ils", "adf", "dme"]
+communication = ["vhf", "uhf", "hf", "satcom"]
+radar = "weather_forward"
+taws_enabled = true
+tcas_enabled = false
+night_vision_compatible = true
+glass_cockpit = false
+
+[weapons] # для военных модификаций
+hardpoints = 6
+weapon_types = ["rockets_80mm", "rockets_122mm", "atgm_fagot", "gun_gsh23"]
+ammo_capacity_rounds = 450
+fire_control = "optical_electronic"
+
+[damage]
+critical_systems = ["main_rotor", "tail_rotor", "engines", "hydraulics", "fuel_tanks"]
+redundancy = {
+    hydraulics = 2,
+    electrical = 2,
+    fuel_lines = "self_sealing"
+}
+armor_protection = "crew_compartment_small_arms"
+crashworthiness = "military_standard"
+fire_suppression = true
+
+[sounds]
+engine_start_1 = "sounds/engines/tvd10_start.wav"
+engine_idle = "sounds/engines/tvd10_idle.wav"
+rotor_spinup = "sounds/rotors/mi8_spinup.wav"
+rotor_flight = "sounds/rotors/mi8_flight.wav"
+rotor_hover = "sounds/rotors/mi8_hover.wav"
+warning_alarm = "sounds/cockpit/warning_master.wav"
+radio_static = "sounds/cockpit/radio_static.wav"
+wind_noise = "sounds/environment/heli_wind.wav"
+
+[visuals]
+navigation_lights = [
+    { position = [-9.0, 2.0, 0.0], color = [1.0, 0.0, 0.0], type = "left" },
+    { position = [9.0, 2.0, 0.0], color = [0.0, 1.0, 0.0], type = "right" },
+    { position = [0.0, 5.0, 0.0], color = [1.0, 1.0, 1.0], type = "top" },
+    { position = [0.0, 0.5, 0.0], color = [1.0, 1.0, 1.0], type = "bottom" }
+]
+anti_collision = {
+    beacon_position = [0.0, 5.5, 0.0],
+    color = [1.0, 0.5, 0.0],
+    flash_rate_hz = 1.0
+}
+searchlight = {
+    position = [0.0, 1.0, 4.0],
+    direction = [0, -0.3, 1],
+    fov = 30,
+    range = 200,
+    controllable = true
+}
+rotor_blur_texture = "textures/rotors/mi8_blur.png"
+
+[variants]
+transport = {
+    seating = 24,
+    cargo_hook = true,
+    avionics = "standard"
+}
+ambulance = {
+    stretchers = 12,
+    medical_crew = 3,
+    oxygen_system = true,
+    lighting = "medical_red"
+}
+firefighting = {
+    water_bucket_l = 2500,
+    hose_reel = true,
+    thermal_camera = true
+}
+military = {
+    armor = "enhanced",
+    weapons = true,
+    countermeasures = ["flare", "chaff"],
+    night_vision = true
+}
+offshore = {
+    emergency_floats = true,
+    radar = "weather_marine",
+    life_rafts = 4
+}
+
+[performance]
+max_speed_kmh = 250
+cruise_speed_kmh = 220
+range_km = 500
+ferry_range_km = 950
+service_ceiling_m = 6000
+hover_ceiling_ige_m = 3500
+hover_ceiling_oge_m = 2000
+rate_of_climb_m_s = 10.0
+max_g = 2.5
+min_g = -0.5

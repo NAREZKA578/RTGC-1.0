@@ -1,0 +1,167 @@
+# Гусеничная техника - GT-SM (ГТ-СМ)
+# Гусеничный транспортер-снегоболотоход
+
+[mesh]
+file = "vehicles/gtsm.obj"
+scale = 1.0
+center_offset = [0.0, 0.8, 0.0]
+
+[collider]
+type = "compound"
+children = [
+    { type = "box", size = [5.5, 2.2, 2.0], offset = [0.0, 0.7, 0.0] },
+    { type = "box", size = [5.8, 0.3, 2.4], offset = [0.0, 0.15, 0.0] } # гусеницы
+]
+
+[rigidbody]
+mass = 4200.0
+max_cargo_mass = 2000.0
+linear_damping = 0.08
+angular_damping = 0.85
+ccd_enabled = true
+
+[tracks]
+type = "rubber_steel"
+length_m = 3.8
+width_m = 0.6
+ground_contact_patches = 14
+track_tension_n = 15000.0
+sprocket_teeth = 12
+idler_type = "adjustable"
+rollers = 6
+suspension_type = "torsion_bar"
+
+[suspension]
+type = "torsion_bar_independent"
+stations = 6
+travel_m = 0.35
+spring_rate_nm_deg = 8500.0
+damping_ratio = 0.35
+bump_stops = true
+shock_absorbers = ["station_1", "station_6"]
+
+[drivetrain]
+engine:
+    type = "v6_diesel_turbo"
+    displacement_l = 6.5
+    max_power_hp = 180
+    max_torque_nm = 650
+    rpm_idle = 650
+    rpm_max = 2800
+    inertia = 0.35
+    friction = 0.02
+    
+transmission:
+    type = "powershift"
+    forward_gears = 4
+    reverse_gears = 1
+    final_drive = 4.8
+    gear_ratios = [4.2, 2.8, 1.9, 1.0]
+    reverse_ratio = -4.5
+    shift_time_ms = 300
+    torque_converter = true
+    
+steering:
+    type = "clutch_brake"
+    steering_levers = true
+    power_assist = false
+    turn_radius_min_m = 3.5
+    pivot_turn = true
+
+[ground_pressure]
+psi = 2.8
+kg_cm2 = 0.2
+snow_capability = "deep_powder"
+swamp_capability = "class_3"
+flotation_rating = "excellent"
+
+[performance]
+max_speed_kmh = 45
+reverse_speed_kmh = 15
+gradeability_deg = 35
+side_slope_deg = 25
+vertical_step_m = 0.6
+trench_crossing_m = 1.8
+ford_depth_m = 1.2
+
+[cargo_area]
+type = "open_bed"
+length_m = 2.8
+width_m = 2.0
+side_height_m = 0.4
+tailgate = true
+canvas_cover = true
+tie_down_points = 8
+payload_uniform_distribution = true
+
+[aerodynamics]
+drag_coefficient = 0.8
+frontal_area_m2 = 5.5
+side_area_m2 = 12.0
+crosswind_sensitivity = 0.2
+
+[damage]
+track_vulnerability = "moderate"
+road_wheel_damage_model = true
+engine_compartment_armor = "light"
+fuel_tank_protection = true
+amphibious_bilge_pumps = true
+
+[amphibious]
+capable = true
+propulsion = "tracks"
+water_speed_kmh = 5.0
+trim_angle_deg = 8.0
+bilge_capacity_l_min = 500
+bow_trim_tab = false
+
+[interior]
+seats = 2
+passenger_capacity = 10
+heating = "engine_coolant"
+ventilation = "forced_air"
+roof_hatches = 2
+
+[sounds]
+engine_start = "sounds/engines/diesel_v6_start.wav"
+engine_idle = "sounds/engines/diesel_v6_idle.wav"
+engine_load = "sounds/engines/diesel_v6_load.wav"
+track_rumble = "sounds/tracks/rubber_steel_rumble.wav"
+track_high_speed = "sounds/tracks/high_speed_clatter.wav"
+water_entry = "sounds/vehicle/water_splash_heavy.wav"
+water_exit = "sounds/vehicle/water_drain.wav"
+
+[visuals]
+headlights = [
+    { position = [-0.9, 1.2, 2.7], direction = [0, 0, 1], fov = 50, range = 80 },
+    { position = [0.9, 1.2, 2.7], direction = [0, 0, 1], fov = 50, range = 80 }
+]
+taillights = [
+    { position = [-1.0, 1.3, -2.8], color = [1.0, 0.0, 0.0] },
+    { position = [1.0, 1.3, -2.8], color = [1.0, 0.0, 0.0] }
+]
+work_lights = [
+    { position = [0.0, 2.0, -1.5], direction = [0, -0.5, -1], fov = 80, range = 40 }
+]
+track_dust_particles = true
+track_snow_trail = true
+
+[variants]
+standard = {
+    cargo_bed = "open",
+    canvas_cover = true
+}
+ambulance = {
+    medical_module = true,
+    stretchers = 4,
+    heating_upgrade = true
+}
+cargo = {
+    bed_extension = true,
+    crane_mount = "optional"
+}
+military = {
+    armor_plates = "light",
+    weapon_mount = "pintle",
+    smoke_grenades = 6
+}

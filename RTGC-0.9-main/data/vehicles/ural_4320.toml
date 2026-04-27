@@ -1,0 +1,208 @@
+# Ural-4320 - Военный грузовик повышенной проходимости
+# 6x6, лебёдка, армейская конфигурация
+
+[mesh]
+file = "vehicles/ural_4320.obj"
+scale = 1.0
+center_offset = [0.0, 1.0, 0.0]
+
+[collider]
+type = "compound"
+children = [
+    { type = "box", size = [7.0, 2.5, 2.8], offset = [0.0, 0.9, -0.3] },
+    { type = "box", size = [1.8, 0.4, 2.4], offset = [-3.3, 0.4, 0.0] },
+    { type = "box", size = [1.8, 0.4, 2.4], offset = [3.3, 0.4, 0.0] }
+]
+
+[rigidbody]
+mass = 7800.0
+max_cargo_mass = 7000.0
+linear_damping = 0.12
+angular_damping = 0.92
+ccd_enabled = true
+
+[suspension]
+type = "leaf_spring_balanced"
+front:
+    spring_strength = 150000.0
+    damping = 20000.0
+    travel = 0.2
+    wheel_radius = 0.52
+    wheel_width = 0.38
+    positions = [
+        [-0.85, 0.75, 2.5],
+        [0.85, 0.75, 2.5]
+    ]
+middle:
+    spring_strength = 220000.0
+    damping = 30000.0
+    travel = 0.18
+    wheel_radius = 0.52
+    wheel_width = 0.38
+    positions = [
+        [-0.85, 0.75, 0.0],
+        [0.85, 0.75, 0.0]
+    ]
+rear:
+    spring_strength = 220000.0
+    damping = 30000.0
+    travel = 0.18
+    wheel_radius = 0.52
+    wheel_width = 0.38
+    positions = [
+        [-0.85, 0.75, -2.3],
+        [0.85, 0.75, -2.3]
+    ]
+
+[drivetrain]
+engine:
+    type = "v8_diesel"
+    displacement_l = 10.85
+    max_power_hp = 230
+    max_torque_nm = 882
+    rpm_idle = 550
+    rpm_max = 2300
+    inertia = 0.6
+    friction = 0.025
+    cold_start_assist = true
+    
+transmission:
+    type = "manual_5spd"
+    gears = 5
+    reverse_gears = 1
+    final_drive = 7.32
+    gear_ratios = [5.6, 2.9, 1.6, 1.0, 0.73]
+    reverse_ratio = -5.3
+    shift_time_ms = 500
+    
+transfer_case:
+    enabled = true
+    low_range_ratio = 2.05
+    modes = ["2H", "4H", "6H", "6L"]
+    differential_lock = true
+    
+differentials:
+    front:
+        type = "open"
+        lockable = true
+        lock_pressure_bar = 6.0
+    middle:
+        type = "open"
+        lockable = true
+    rear:
+        type = "open"
+        lockable = true
+
+[wheels]
+count = 6
+friction_table = "military_all_terrain"
+tire_pressure_control = true
+tire_pressure_range_bar = [2.5, 7.0]
+wear_rate = 0.0001
+run_flat_compatible = true
+
+[steering]
+max_angle_deg = 42.0
+ratio = 22.0
+hydraulic_booster = true
+power_steering_fail_safe = true
+
+[brakes]
+type = "pneumatic_drum"
+front:
+    diameter_mm = 400
+    width_mm = 140
+rear:
+    diameter_mm = 400
+    width_mm = 140
+abs_enabled = false
+parking_brake = "spring_accumulator"
+exhaust_brake = true
+
+[winch]
+enabled = true
+cable_length_m = 90.0
+max_pull_kn = 70.0
+cable_diameter_mm = 15.0
+speed_m_per_min = 6.0
+fairlead_type = "roller"
+remote_control = true
+
+[cargo_bed]
+type = "flatbed_with_arches"
+length_m = 4.5
+width_m = 2.3
+side_height_m = 0.4
+canvas_cover = true
+tie_down_points = 12
+military_standard = "GOST-ARMY"
+
+[aerodynamics]
+drag_coefficient = 0.7
+frontal_area_m2 = 7.8
+lift_coefficient_front = 0.15
+lift_coefficient_rear = 0.25
+side_area_m2 = 18.0
+crosswind_sensitivity = 0.35
+
+[damage]
+armor_level = "small_arms_762mm"
+run_flat_tires = true
+fuel_tank_protection = true
+electrical_waterproof = "IP67"
+max_deformation_m = 0.4
+repair_cost_multiplier = 1.8
+
+[interior]
+seats = 2
+passenger_bench = true
+radio_station = "military_vhf"
+night_vision_compatible = true
+heating = "diesel_heater"
+
+[pneumatics]
+tank_capacity_l = 30.0
+compressor_flow_l_min = 140
+max_pressure_bar = 9.0
+circuits = ["brakes", "tire_pressure", "clutch_boost", "differential_locks"]
+
+[sounds]
+engine_start = "sounds/engines/ural_start.wav"
+engine_idle = "sounds/engines/ural_idle.wav"
+engine_load = "sounds/engines/ural_load.wav"
+gear_shift = "sounds/transmission/truck_heavy_shift.wav"
+horn = "sounds/horn/military_horn.wav"
+winch_operate = "sounds/mechanical/winch_motor.wav"
+canvas_flap = "sounds/fabric/canvas_wind.wav"
+
+[visuals]
+headlights = [
+    { position = [-1.1, 1.3, 3.5], direction = [0, 0, 1], fov = 45, range = 100 },
+    { position = [1.1, 1.3, 3.5], direction = [0, 0, 1], fov = 45, range = 100 }
+]
+blackout_lights = [
+    { position = [-1.0, 1.4, 3.6], color = [0.0, 0.3, 0.0], intensity = 0.1 },
+    { position = [1.0, 1.4, 3.6], color = [0.0, 0.3, 0.0], intensity = 0.1 }
+]
+taillights = [
+    { position = [-1.2, 1.5, -3.6], color = [0.5, 0.0, 0.0] },
+    { position = [1.2, 1.5, -3.6], color = [0.5, 0.0, 0.0] }
+]
+convoy_light = { position = [0.0, 2.5, -3.0], color = [0.0, 0.0, 1.0], intensity = 0.2 }
+
+[variants]
+standard = {}
+cargo = {
+    cargo_bed_type = "extended",
+    additional_fuel_tanks = 2
+}
+command = {
+    radio_upgrade = "long_range",
+    map_table = true,
+    generator = "5kw_diesel"
+}
+ambulance = {
+    medical_module = true,
+   stretchers = 4,
+    medical_equipment = "field_surgical"
+}

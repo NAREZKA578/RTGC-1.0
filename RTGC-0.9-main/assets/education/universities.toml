@@ -1,0 +1,588 @@
+# Universities Database for Character Creation
+# Contains Russian and Chinese universities with faculties and specialties
+
+# ============================================================================
+# UNIVERSITIES LIST
+# ============================================================================
+
+[[universities]]
+id = "ngtu"
+name = "Новосибирский государственный технический университет"
+short_name = "НГТУ"
+city = "Новосибирск"
+country = "Россия"
+reputation = 75
+type = "technical"
+years_range = [4, 6]  # bachelor + master
+
+[[universities]]
+id = "nsu"
+name = "Новосибирский государственный университет"
+short_name = "НГУ"
+city = "Новосибирск"
+country = "Россия"
+reputation = 90
+type = "research"
+years_range = [4, 6]
+
+[[universities]]
+id = "sibadi"
+name = "Сибирский государственный автомобильно-дорожный университет"
+short_name = "СибАДИ"
+city = "Омск"
+country = "Россия"
+reputation = 70
+type = "technical"
+years_range = [4, 5]
+
+[[universities]]
+id = "sibgups"
+name = "Сибирский государственный университет путей сообщения"
+short_name = "СибГУПС"
+city = "Новосибирск"
+country = "Россия"
+reputation = 72
+type = "transport"
+years_range = [4, 5]
+
+[[universities]]
+id = "ngau"
+name = "Новосибирский государственный аграрный университет"
+short_name = "НГАУ"
+city = "Новосибирск"
+country = "Россия"
+reputation = 65
+type = "agricultural"
+years_range = [4, 5]
+
+[[universities]]
+id = "ngueu"
+name = "Новосибирский государственный университет экономики и управления"
+short_name = "НГУЭУ"
+city = "Новосибирск"
+country = "Россия"
+reputation = 68
+type = "economic"
+years_range = [4, 5]
+
+[[universities]]
+id = "ngmu"
+name = "Новосибирский государственный медицинский университет"
+short_name = "НГМУ"
+city = "Новосибирск"
+country = "Россия"
+reputation = 78
+type = "medical"
+years_range = [5, 8]
+
+[[universities]]
+id = "msu"
+name = "Московский государственный университет им. М.В. Ломоносова"
+short_name = "МГУ"
+city = "Москва"
+country = "Россия"
+reputation = 95
+type = "research"
+years_range = [4, 6]
+
+[[universities]]
+id = "bmstu"
+name = "Московский государственный технический университет им. Н.Э. Баумана"
+short_name = "МГТУ им. Баумана"
+city = "Москва"
+country = "Россия"
+reputation = 92
+type = "technical"
+years_range = [4, 6]
+
+[[universities]]
+id = "mfti"
+name = "Московский физико-технический институт"
+short_name = "МФТИ"
+city = "Долгопрудный"
+country = "Россия"
+reputation = 94
+type = "research"
+years_range = [5, 7]
+
+[[universities]]
+id = "hse"
+name = "Национальный исследовательский университет «Высшая школа экономики»"
+short_name = "ВШЭ"
+city = "Москва"
+country = "Россия"
+reputation = 88
+type = "economic"
+years_range = [4, 6]
+
+[[universities]]
+id = "tpu"
+name = "Томский политехнический университет"
+short_name = "ТПУ"
+city = "Томск"
+country = "Россия"
+reputation = 82
+type = "technical"
+years_range = [4, 6]
+
+[[universities]]
+id = "urfu"
+name = "Уральский федеральный университет"
+short_name = "УрФУ"
+city = "Екатеринбург"
+country = "Россия"
+reputation = 80
+type = "research"
+years_range = [4, 6]
+
+[[universities]]
+id = "kuzgtu"
+name = "Кузбасский государственный технический университет"
+short_name = "КузГТУ"
+city = "Кемерово"
+country = "Россия"
+reputation = 68
+type = "technical"
+years_range = [4, 5]
+
+[[universities]]
+id = "madi"
+name = "Московский автомобильно-дорожный государственный технический университет"
+short_name = "МАДИ"
+city = "Москва"
+country = "Россия"
+reputation = 75
+type = "technical"
+years_range = [4, 5]
+
+[[universities]]
+id = "gubkin"
+name = "Российский государственный университет нефти и газа им. И.М. Губкина"
+short_name = "РГУ нефти и газа"
+city = "Москва"
+country = "Россия"
+reputation = 85
+type = "technical"
+years_range = [4, 6]
+
+[[universities]]
+id = "mstu_ga"
+name = "Московский государственный технический университет гражданской авиации"
+short_name = "МГТУ ГА"
+city = "Москва"
+country = "Россия"
+reputation = 80
+type = "aviation"
+years_range = [4, 5]
+
+[[universities]]
+id = "tsinghua"
+name = "清华大学"
+short_name = "Цинхуа"
+city = "Пекин"
+country = "Китай"
+reputation = 98
+type = "research"
+years_range = [4, 6]
+
+[[universities]]
+id = "peking"
+name = "北京大学"
+short_name = "Пекинский университет"
+city = "Пекин"
+country = "Китай"
+reputation = 96
+type = "research"
+years_range = [4, 6]
+
+[[universities]]
+id = "hrbeu"
+name = "Harbin Engineering University"
+short_name = "Харбинский инженерный"
+city = "Харбин"
+country = "Китай"
+reputation = 78
+type = "technical"
+years_range = [4, 5]
+
+# ============================================================================
+# FACULTIES
+# ============================================================================
+
+[[faculties]]
+university_id = "ngtu"
+id = "mechanical"
+name = "Машиностроительный факультет"
+specialties = ["automotive_engineering", "mechanical_engineering"]
+
+[[faculties]]
+university_id = "ngtu"
+id = "energy"
+name = "Факультет энергетики"
+specialties = ["electrical_engineering", "power_engineering"]
+
+[[faculties]]
+university_id = "ngtu"
+id = "construction"
+name = "Строительный факультет"
+specialties = ["civil_engineering", "construction_management"]
+
+[[faculties]]
+university_id = "nsu"
+id = "geology"
+name = "Геолого-геофизический факультет"
+specialties = ["geology", "geophysics", "mining"]
+
+[[faculties]]
+university_id = "nsu"
+id = "physics"
+name = "Физический факультет"
+specialties = ["physics", "applied_physics"]
+
+[[faculties]]
+university_id = "sibadi"
+id = "automotive"
+name = "Автомобильно-дорожный факультет"
+specialties = ["automotive_engineering", "road_building"]
+
+[[faculties]]
+university_id = "sibgups"
+id = "transport"
+name = "Факультет транспорта"
+specialties = ["logistics", "railway_engineering"]
+
+[[faculties]]
+university_id = "ngau"
+id = "agriculture"
+name = "Аграрный факультет"
+specialties = ["agriculture", "forestry"]
+
+[[faculties]]
+university_id = "ngueu"
+id = "business"
+name = "Факультет бизнеса"
+specialties = ["business", "trading", "management"]
+
+[[faculties]]
+university_id = "ngmu"
+id = "medicine"
+name = "Лечебный факультет"
+specialties = ["medicine", "pharmacy"]
+
+[[faculties]]
+university_id = "bmstu"
+id = "rocket_space"
+name = "Факультет ракетно-космической техники"
+specialties = ["aerospace_engineering", "mechanical_engineering"]
+
+[[faculties]]
+university_id = "mfti"
+id = "aerophysics"
+name = "Факультет аэрофизики и космических исследований"
+specialties = ["aerospace_engineering", "aviation"]
+
+[[faculties]]
+university_id = "hse"
+id = "economics"
+name = "Экономический факультет"
+specialties = ["business", "economics", "trading"]
+
+[[faculties]]
+university_id = "tpu"
+id = "petroleum"
+name = "Нефтегазовый факультет"
+specialties = ["drilling", "petroleum_engineering"]
+
+[[faculties]]
+university_id = "urfu"
+id = "mining"
+name = "Горный факультет"
+specialties = ["mining", "geology", "metallurgy"]
+
+[[faculties]]
+university_id = "madi"
+id = "automotive"
+name = "Автомобильный факультет"
+specialties = ["automotive_engineering", "logistics"]
+
+[[faculties]]
+university_id = "gubkin"
+id = "oil_gas"
+name = "Факультет нефтегазового дела"
+specialties = ["drilling", "petroleum_engineering", "geology"]
+
+[[faculties]]
+university_id = "mstu_ga"
+id = "aviation"
+name = "Лётный факультет"
+specialties = ["aviation", "piloting", "aircraft_maintenance"]
+
+[[faculties]]
+university_id = "tsinghua"
+id = "engineering"
+name = "School of Engineering"
+specialties = ["mechanical_engineering", "civil_engineering", "electrical_engineering"]
+
+[[faculties]]
+university_id = "peking"
+id = "economics"
+name = "Guanghua School of Management"
+specialties = ["business", "economics", "trading"]
+
+[[faculties]]
+university_id = "hrbeu"
+id = "marine"
+name = "College of Shipbuilding Engineering"
+specialties = ["mechanical_engineering", "welding"]
+
+# ============================================================================
+# SPECIALTIES - Skills, starting capital, contacts
+# ============================================================================
+
+[[specialties]]
+id = "automotive_engineering"
+name = "Автомобилестроение"
+base_skills = { mechanics = 4, driving = 3, electrics = 3, welding = 2 }
+starting_capital_rub = 50000
+contacts = ["auto_mechanic", "car_dealer"]
+description = "Инженер по проектированию и обслуживанию автомобилей"
+
+[[specialties]]
+id = "mechanical_engineering"
+name = "Машиностроение"
+base_skills = { mechanics = 4, welding = 3, construction = 2 }
+starting_capital_rub = 45000
+contacts = ["factory_worker", "engineer"]
+description = "Инженер-механик широкого профиля"
+
+[[specialties]]
+id = "electrical_engineering"
+name = "Электротехника"
+base_skills = { electrics = 4, mechanics = 2 }
+starting_capital_rub = 48000
+contacts = ["electrician", "power_company"]
+description = "Инженер по электрическим системам"
+
+[[specialties]]
+id = "civil_engineering"
+name = "Строительство"
+base_skills = { construction = 4, road_building = 3, welding = 2 }
+starting_capital_rub = 42000
+contacts = ["builder", "architect"]
+description = "Инженер-строитель"
+
+[[specialties]]
+id = "road_building"
+name = "Дорожное строительство"
+base_skills = { road_building = 4, construction = 3, driving = 2 }
+starting_capital_rub = 40000
+contacts = ["road_worker", "construction_company"]
+description = "Специалист по строительству дорог"
+
+[[specialties]]
+id = "geology"
+name = "Геология"
+base_skills = { geology = 4, drilling = 2, mining = 2 }
+starting_capital_rub = 55000
+contacts = ["geologist", "mining_company"]
+description = "Геолог-разведчик"
+
+[[specialties]]
+id = "mining"
+name = "Горное дело"
+base_skills = { mining = 4, geology = 3, drilling = 2 }
+starting_capital_rub = 52000
+contacts = ["miner", "quarry_owner"]
+description = "Горный инженер"
+
+[[specialties]]
+id = "drilling"
+name = "Бурение нефтяных скважин"
+base_skills = { drilling = 4, geology = 3, mechanics = 2 }
+starting_capital_rub = 65000
+contacts = ["driller", "oil_company"]
+description = "Инженер по бурению"
+
+[[specialties]]
+id = "aviation"
+name = "Лётная эксплуатация"
+base_skills = { piloting = 4, navigation = 3, mechanics = 2 }
+starting_capital_rub = 70000
+contacts = ["pilot", "airport"]
+description = "Пилот гражданской авиации"
+
+[[specialties]]
+id = "piloting"
+name = "Пилотирование вертолётов"
+base_skills = { piloting = 4, flying = 2, navigation = 3 }
+starting_capital_rub = 75000
+contacts = ["helicopter_pilot", "aviation_company"]
+description = "Пилот вертолёта"
+
+[[specialties]]
+id = "flying"
+name = "Самолётовождение"
+base_skills = { flying = 4, piloting = 2, navigation = 3 }
+starting_capital_capital_rub = 68000
+contacts = ["airplane_pilot", "cargo_airline"]
+description = "Пилот самолёта"
+
+[[specialties]]
+id = "business"
+name = "Бизнес и менеджмент"
+base_skills = { business = 4, logistics = 3, trading = 3 }
+starting_capital_rub = 80000
+contacts = ["businessman", "bank_manager"]
+description = "Предприниматель, менеджер"
+
+[[specialties]]
+id = "logistics"
+name = "Логистика"
+base_skills = { logistics = 4, driving = 2, business = 3 }
+starting_capital_rub = 45000
+contacts = ["dispatcher", "warehouse_manager"]
+description = "Логист, специалист по цепям поставок"
+
+[[specialties]]
+id = "trading"
+name = "Торговое дело"
+base_skills = { trading = 4, business = 3, logistics = 2 }
+starting_capital_rub = 50000
+contacts = ["trader", "wholesaler"]
+description = "Торговый представитель, менеджер по продажам"
+
+[[specialties]]
+id = "medicine"
+name = "Лечебное дело"
+base_skills = { medicine = 4, fitness = 2 }
+starting_capital_rub = 40000
+contacts = ["doctor", "pharmacist"]
+description = "Врач общей практики"
+
+[[specialties]]
+id = "forestry"
+name = "Лесное дело"
+base_skills = { logging = 4, driving = 2, mechanics = 2 }
+starting_capital_rub = 35000
+contacts = ["logger", "sawmill_owner"]
+description = "Лесничий, специалист по лесозаготовке"
+
+[[specialties]]
+id = "welding"
+name = "Сварочное производство"
+base_skills = { welding = 4, mechanics = 2, construction = 2 }
+starting_capital_rub = 38000
+contacts = ["welder", "metal_factory"]
+description = "Инженер-технолог сварочного производства"
+
+[[specialties]]
+id = "aerospace_engineering"
+name = "Аэрокосмическая техника"
+base_skills = { mechanics = 4, flying = 3, electrics = 3 }
+starting_capital_rub = 60000
+contacts = ["engineer", "aerospace_company"]
+description = "Инженер аэрокосмической отрасли"
+
+[[specialties]]
+id = "navigation"
+name = "Навигация и управление движением"
+base_skills = { navigation = 4, driving = 3, logistics = 2 }
+starting_capital_rub = 42000
+contacts = ["navigator", "shipping_company"]
+description = "Штурман, специалист по навигации"
+
+[[specialties]]
+id = "agriculture"
+name = "Агрономия"
+base_skills = { driving = 2, mechanics = 2 }
+starting_capital_rub = 30000
+contacts = ["farmer", "agro_company"]
+description = "Агроном, специалист по растениеводству"
+
+[[specialties]]
+id = "physics"
+name = "Физика"
+base_skills = { mechanics = 3, electrics = 3 }
+starting_capital_rub = 35000
+contacts = ["scientist", "research_lab"]
+description = "Физик-исследователь"
+
+[[specialties]]
+id = "geophysics"
+name = "Геофизика"
+base_skills = { geology = 4, drilling = 2 }
+starting_capital_rub = 50000
+contacts = ["geophysicist", "exploration_company"]
+description = "Геофизик-разведчик"
+
+[[specialties]]
+id = "power_engineering"
+name = "Электроэнергетика"
+base_skills = { electrics = 4, mechanics = 2 }
+starting_capital_rub = 45000
+contacts = ["electrician", "power_plant"]
+description = "Инженер-энергетик"
+
+[[specialties]]
+id = "construction_management"
+name = "Управление в строительстве"
+base_skills = { construction = 4, business = 3 }
+starting_capital_rub = 50000
+contacts = ["builder", "developer"]
+description = "Менеджер строительных проектов"
+
+[[specialties]]
+id = "railway_engineering"
+name = "Железнодорожное машиностроение"
+base_skills = { mechanics = 3, driving = 3, tracked = 2 }
+starting_capital_rub = 42000
+contacts = ["railway_worker", "train_driver"]
+description = "Инженер железнодорожного транспорта"
+
+[[specialties]]
+id = "metallurgy"
+name = "Металлургия"
+base_skills = { welding = 3, mechanics = 3, mining = 2 }
+starting_capital_rub = 48000
+contacts = ["metallurgist", "steel_plant"]
+description = "Инженер-металлург"
+
+[[specialties]]
+id = "petroleum_engineering"
+name = "Нефтегазовое дело"
+base_skills = { drilling = 4, geology = 3, mechanics = 3 }
+starting_capital_rub = 70000
+contacts = ["oil_worker", "refinery_manager"]
+description = "Инженер нефтегазовой отрасли"
+
+[[specialties]]
+id = "aircraft_maintenance"
+name = "Техническая эксплуатация летательных аппаратов"
+base_skills = { mechanics = 4, electrics = 3, flying = 2 }
+starting_capital_rub = 55000
+contacts = ["aircraft_mechanic", "maintenance_shop"]
+description = "Авиатехник"
+
+[[specialties]]
+id = "economics"
+name = "Экономика"
+base_skills = { business = 3, trading = 3, logistics = 2 }
+starting_capital_rub = 45000
+contacts = ["economist", "analyst"]
+description = "Экономист, финансовый аналитик"
+
+[[specialties]]
+id = "management"
+name = "Менеджмент"
+base_skills = { business = 4, logistics = 2, trading = 2 }
+starting_capital_rub = 40000
+contacts = ["manager", "hr_director"]
+description = "Менеджер по управлению персоналом"
+
+[[specialties]]
+id = "pharmacy"
+name = "Фармация"
+base_skills = { medicine = 3 }
+starting_capital_rub = 38000
+contacts = ["pharmacist", "drug_supplier"]
+description = "Провизор, фармацевт"
