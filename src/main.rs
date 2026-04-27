@@ -1,7 +1,4 @@
-//! RTGC-1.0 - Russian Open World Vehicle Simulator
-//! 
-//! Entry point for the engine.
-//! Minimal initialization, delegates to EngineHub for everything else.
+//входная точка игры!
 
 use rtgc::EngineHub;
 use tracing_subscriber::{fmt, prelude::*, EnvFilter};
