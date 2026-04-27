@@ -1,0 +1,163 @@
+# RTGC-0.8 Game Settings Configuration
+# This file stores all user-customizable game settings
+
+# ============================================================================
+# DISPLAY SETTINGS
+# ============================================================================
+[display]
+fullscreen = false
+vsync = true
+fps_limit = 60
+window_width = 1600
+window_height = 900
+resolution_width = 1920
+resolution_height = 1080
+brightness = 1.0
+gamma = 1.0
+
+# ============================================================================
+# GRAPHICS SETTINGS
+# ============================================================================
+[graphics]
+backend = "opengl"  # "opengl", "vulkan", "dx12"
+texture_quality = "high"  # "low", "medium", "high", "ultra"
+shadow_quality = "medium"  # "off", "low", "medium", "high"
+lod_distance = 1.0  # 0.5 = 50%, 1.0 = 100%, 2.0 = 200%
+render_distance = 5000.0  # meters
+anti_aliasing = "fxaa"  # "off", "fxaa", "msaa2x", "msaa4x", "msaa8x"
+anisotropic_filtering = 16  # 1, 2, 4, 8, 16
+ambient_occlusion = true
+motion_blur = false
+depth_of_field = false
+bloom = true
+color_grading = true
+
+# ============================================================================
+# AUDIO SETTINGS
+# ============================================================================
+[audio]
+master_volume = 0.8
+music_volume = 0.6
+sfx_volume = 0.9
+voice_volume = 0.7
+engine_volume = 0.85
+environment_volume = 0.75
+audio_device = "default"
+
+# ============================================================================
+# CONTROLS SETTINGS
+# ============================================================================
+[controls]
+mouse_sensitivity = 1.0
+invert_y_axis = false
+vehicle_mouse_steering = false
+camera_mode = "third_person"  # "first_person", "third_person"
+camera_distance = 5.0
+camera_height = 2.5
+camera_smoothing = 0.8
+
+# Key bindings
+key_forward = "W"
+key_backward = "S"
+key_left = "A"
+key_right = "D"
+key_jump = "Space"
+key_run = "ShiftLeft"
+key_interact = "F"
+key_inventory = "Tab"
+key_menu = "Escape"
+key_map = "M"
+key_horn = "H"
+key_lights = "L"
+key_engine = "E"
+key_handbrake = "Space"
+key_view_change = "V"
+key_debug = "F3"
+
+# Vehicle controls
+key_gear_up = "Z"
+key_gear_down = "X"
+key_diff_lock = "K"
+key_4wd_toggle = "N"
+key_low_range = "B"
+key_winch_in = "Q"
+key_winch_out = "R"
+
+# ============================================================================
+# GAMEPLAY SETTINGS
+# ============================================================================
+[gameplay]
+difficulty = "normal"  # "easy", "normal", "hard", "realistic"
+auto_save = true
+auto_save_interval = 300  # seconds
+show_hints = true
+show_waypoints = true
+show_minimap = true
+show_compass = true
+units = "metric"  # "metric", "imperial"
+fuel_consumption = 1.0  # multiplier
+wear_rate = 1.0  # multiplier
+damage_multiplier = 1.0
+respawn_on_crash = true
+financial_penalties = true
+
+# ============================================================================
+# HUD SETTINGS
+# ============================================================================
+[hud]
+hud_enabled = true
+hud_opacity = 1.0
+hud_scale = 1.0
+show_speed = true
+show_gear = true
+show_fuel = true
+show_diff_status = true
+show_wheel_status = true
+show_cargo = true
+show_terrain_angle = true
+show_minimap = true
+show_compass = true
+compact_mode = false
+show_fps = false
+show_ping = false
+show_coordinates = false
+
+# ============================================================================
+# NETWORK SETTINGS (for co-op)
+# ============================================================================
+[network]
+player_name = "Driver"
+voice_chat_enabled = true
+voice_chat_push_to_talk = true
+push_to_talk_key = "ControlLeft"
+max_players = 32
+server_port = 27015
+
+# ============================================================================
+# PERFORMANCE SETTINGS
+# ============================================================================
+[performance]
+use_multithreading = true
+physics_threads = 4
+render_threads = 2
+streaming_threads = 2
+memory_budget_mb = 2048
+chunk_load_distance = 8  # chunks
+chunk_unload_distance = 12  # chunks
+async_texture_loading = true
+preload_nearby_chunks = true
+
+# ============================================================================
+# DEBUG SETTINGS (development only)
+# ============================================================================
+[debug]
+debug_mode = false
+show_physics_debug = false
+show_chunk_boundaries = false
+show_collision_boxes = false
+show_fps_graph = false
+show_memory_usage = false
+god_mode = false
+unlimited_fuel = false
+unlimited_money = false
+skip_character_creation = false
