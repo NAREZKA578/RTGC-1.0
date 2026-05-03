@@ -1,4 +1,3 @@
-```
 # Rust-specific ignores
 target/
 Cargo.lock
@@ -33,4 +32,6 @@ htmlcov/
 # Debug/Misc
 *.tmp
 *~
-```
+
+# Saves
+saves/

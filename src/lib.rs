@@ -1,5 +1,11 @@
-//бибилотеки
-
+pub mod app;
 pub mod core;
+pub mod platform;
 pub mod graphics;
+pub mod audio;
+pub mod ui;
+pub mod screens;
+pub mod animation;
+pub mod save;
 pub mod physics;
+pub mod font;
